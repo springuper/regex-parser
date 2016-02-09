@@ -1,6 +1,6 @@
 {
   "name": "regexp-parser",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "an elegant regular expression parser purely implemented in javascript",
   "main": "index.js",
   "scripts": {
