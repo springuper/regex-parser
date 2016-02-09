@@ -1,14 +1,14 @@
 {
-  "name": "regex-parser",
+  "name": "regexp-parser",
   "version": "0.1.0",
   "description": "regular expression parser",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/*.js"
+    "test": "DEBUG=regex-parser ./node_modules/mocha/bin/mocha test/*.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/springuper/regex-parser.git"
+    "url": "git+https://github.com/springuper/regexp-parser.git"
   },
   "keywords": [
     "regex",
@@ -17,9 +17,9 @@
   "author": "springuper@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/springuper/regex-parser/issues"
+    "url": "https://github.com/springuper/regexp-parser/issues"
   },
-  "homepage": "https://github.com/springuper/regex-parser#readme",
+  "homepage": "https://github.com/springuper/regexp-parser#readme",
   "dependencies": {
     "debug": "^2.2.0"
   },
