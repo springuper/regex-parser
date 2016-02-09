@@ -1,7 +1,7 @@
 {
   "name": "regexp-parser",
-  "version": "0.1.0",
-  "description": "regular expression parser",
+  "version": "0.1.1",
+  "description": "an elegant regular expression parser purely implemented in javascript",
   "main": "index.js",
   "scripts": {
     "test": "DEBUG=regex-parser ./node_modules/mocha/bin/mocha test/*.js"
