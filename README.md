@@ -1,5 +1,7 @@
 # regexp-parser
 
+[![Build Status](https://travis-ci.org/springuper/regexp-parser.svg?branch=master)](https://travis-ci.org/springuper/regexp-parser)
+
 An elegant regular expression parser purely implemented in javascript.
 
 ## Usage
@@ -7,6 +9,7 @@ An elegant regular expression parser purely implemented in javascript.
 ```js
 var RegExpParser = require('regexp-parser');
 var reg = new RegExpParser('ab');
+
 console.log(reg.test('ab')); // => true
 console.log(reg.test('ba')); // => false
 console.log(reg.find('abc')); // => [{ index: 0, text: 'ab' }]
