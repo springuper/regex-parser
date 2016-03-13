@@ -28,4 +28,45 @@ describe('regex-parser', function () {
         assert(!reg.test('b'));
         assert(!reg.test('ba'));
     });
+
+    it('should handle simple star pattern', function () {
+        let reg = new Parser('a*b');
+
+        console.log('@NFA', require('util').inspect(reg.NFATable[1].transitions));
+        assert(reg.NFATable.length === 6);
+
+        assert(reg.DFATable.length === 3);
+        assert(reg.DFATable[0].transitions.length === 2);
+        assert(reg.DFATable[0].transitions[0].input === 'a');
+        assert(reg.DFATable[0].transitions[1].input === 'b');
+        assert(reg.DFATable[1].transitions.length === 2);
+        assert(reg.DFATable[1].transitions[0].input === 'a');
+        assert(reg.DFATable[1].transitions[1].input === 'b');
+        assert(reg.DFATable[2].transitions.length === 0);
+
+        assert(reg.test('b'));
+        assert(reg.test('ab'));
+        assert(reg.test('aab'));
+        assert(reg.test('ba'));
+        assert(!reg.test('a'));
+        assert(!reg.test('ac'));
+    });
+
+    it('should handle simple union pattern', function () {
+        let reg = new Parser('a|b');
+
+        assert(reg.NFATable.length === 6);
+
+        assert(reg.DFATable.length === 3);
+        assert(reg.DFATable[0].transitions.length === 2);
+        assert(reg.DFATable[0].transitions[0].input === 'a');
+        assert(reg.DFATable[0].transitions[1].input === 'b');
+
+        assert(reg.test('a'));
+        assert(reg.test('b'));
+        assert(reg.test('ab'));
+        assert(reg.test('ba'));
+        assert(!reg.test(''));
+        assert(!reg.test('c'));
+    });
 });
